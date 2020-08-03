@@ -78,16 +78,6 @@ def main():
 
     #################################################################
     
-    # Your task is to complete dialogue_manager.py and use your 
-    # advanced DialogueManager instead of SimpleDialogueManager. 
-    
-    # This is the point where you plug it into the Telegram bot. 
-    # Do not forget to import all needed dependencies when you do so.
-    
-    # simple_manager = SimpleDialogueManager()
-    # bot = BotHandler(token, simple_manager)
-
-    ######### YOUR CODE HERE #############
     from dialogue_manager import DialogueManager
 
     RESOURCE_PATH = {'INTENT_RECOGNIZER': 'intent_recognizer.pkl',
