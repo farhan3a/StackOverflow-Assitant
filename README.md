@@ -2,7 +2,7 @@
 
 *An interactive conversational chatbot that assists with a search on StackOverflow and holds a dialogue using a dialogue manager*
 
-Overview:
+### Overview:
 The dialogue chat bot is able to perform the following task:-
 * answer programming-related questions (using StackOverflow dataset);
 * chit-chat and simulate dialogue on all non programming-related questions.
@@ -43,7 +43,7 @@ We want to write a bot, which will not only **answer programming-related questio
 It would also be good to predict which programming language a particular question referees to. By doing so, we will speed up question search by a factor of the number of languages (10 here), and exercise our *text classification* skill a bit.
 
 ### Data preparation
-At first I have preprocessed the texts and did TF-IDF tranformations as I have done in the first assignment (Predict tags on StackOverflow with linear models). In addition, I have also dumped the TF-IDF vectorizer with pickle to use it later in the running bot.
+At first, I have preprocessed the texts and did TF-IDF tranformations as I have done in the first assignment (Predict tags on StackOverflow with linear models). In addition, I have also dumped the TF-IDF vectorizer with pickle to use it later in the running bot.
 
 ### Intent recognition
 I have done a binary classification on TF-IDF representations of texts. Labels will be either `dialogue` for general questions or `stackoverflow` for programming-related questions. Firstly, I have prepared the data for this task:
@@ -51,7 +51,7 @@ I have done a binary classification on TF-IDF representations of texts. Labels w
 - split it into train and test in proportion 9:1, using *random_state=0* for reproducibility
 - transform it into TF-IDF features
 
-Later I have trained the **intent recognizer** using LogisticRegression on the train set with the following parameters: *penalty='l2'*, *C=10*, *random_state=0*. Here I have achieved an accuracy of 99%.
+Later, I have trained the **intent recognizer** using LogisticRegression on the train set with the following parameters: *penalty='l2'*, *C=10*, *random_state=0*. Here I have achieved an accuracy of 99%.
 
 ### Programming language classification 
 Once the `stackoverflow` tag has been prediocted, I have trained one more classifier for the programming-related questions. It will predict exactly one tag (=programming language) and will be also based on Logistic Regression with TF-IDF features. 
